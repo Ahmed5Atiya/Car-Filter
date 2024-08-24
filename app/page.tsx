@@ -6,7 +6,7 @@ import { fetchCars } from "@/utlis";
 import { all } from "axios";
 import Image from "next/image";
 
-export default async function Home() {
+export default async function Home({ searchParams }) {
   const allCars = await fetchCars();
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
   console.log(allCars);
