@@ -29,7 +29,7 @@ export interface CarProps {
   year: number;
 }
 
-export interface CardDetailsProps {
-  isOpen: boolean;
-  setIsOpen: (isOpen: boolean) => void;
-}
+// export interface CardDetailsProps {
+//   isOpen: boolean;
+//   setIsOpen: (isOpen: boolean) => void;
+// }

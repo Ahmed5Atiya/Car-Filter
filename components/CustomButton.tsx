@@ -18,7 +18,7 @@ function CustomButton({
       disabled={false}
       type={btnType || "button"}
       className={`custom-btn ${containerStyle}`}
-      onClick={() => {}}
+      onClick={handelClick}
     >
       <span className={`flex-1 ${textStyles}`}>{title}</span>
       {rightIcon && (
