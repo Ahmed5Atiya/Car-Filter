@@ -44,6 +44,11 @@ export interface SelectProps {
   title: string;
   options: OptionProps[];
 }
+
+export interface ShowMoreProps {
+  isNext: boolean;
+  pageNumber: number;
+}
 // export interface CardDetailsProps {
 //   isOpen: boolean;
 //   setIsOpen: (isOpen: boolean) => void;
