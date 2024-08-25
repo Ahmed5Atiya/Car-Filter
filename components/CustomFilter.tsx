@@ -1,15 +1,30 @@
 "use client";
 import { SelectProps } from "@/types";
+import { updateTheUrlPathName } from "@/utlis";
 import { Combobox, Listbox, Transition } from "@headlessui/react";
 import Image from "next/image";
-import React, { Fragment, useState } from "react";
+import { useRouter } from "next/navigation";
+import React, { Fragment, useReducer, useState } from "react";
 
 function CustomFilter({ title, options }: SelectProps) {
   const [selected, setSelected] = useState(options[0]);
-
+  const router = useRouter();
+  const handelFilter = (e: { value: string; title: string }) => {
+    // const searchParams = new URLSearchParams(window.location.search);
+    // searchParams.set(title, e.value);
+    // const newPathUrl = `${window.location.pathname}?${searchParams.toString()}`;
+    const newPathUrl = updateTheUrlPathName(title, e.value);
+    router.push(newPathUrl);
+  };
   return (
     <div className="w-fit">
-      <Listbox value={selected} onChange={(e) => setSelected(e)}>
+      <Listbox
+        value={selected}
+        onChange={(e) => {
+          setSelected(e);
+          handelFilter(e);
+        }}
+      >
         <div className="relative w-fit z-10">
           <Listbox.Button className="custom-filter__btn">
             <span className="block truncate">{selected.title}</span>
