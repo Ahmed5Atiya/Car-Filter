@@ -1,3 +1,4 @@
+import { title } from "process";
 import { MouseEventHandler } from "react";
 
 export interface CustomButtonProps {
@@ -34,6 +35,14 @@ export interface filterProps {
   fuel: string;
   limit: number;
   model: string;
+}
+export interface OptionProps {
+  title: string;
+  value: string;
+}
+export interface SelectProps {
+  title: string;
+  options: OptionProps[];
 }
 // export interface CardDetailsProps {
 //   isOpen: boolean;
