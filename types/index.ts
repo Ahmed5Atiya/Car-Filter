@@ -28,7 +28,13 @@ export interface CarProps {
   transmission: string;
   year: number;
 }
-
+export interface filterProps {
+  menufacturer: string;
+  year: number;
+  fuel: string;
+  limit: number;
+  model: string;
+}
 // export interface CardDetailsProps {
 //   isOpen: boolean;
 //   setIsOpen: (isOpen: boolean) => void;

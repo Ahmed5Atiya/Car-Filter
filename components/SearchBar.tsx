@@ -48,7 +48,7 @@ function SearchBar() {
       searchParams.delete("menufacturer", menufacturer);
     }
 
-    const newPathUrl = `${window.location.search}?${searchParams.toString()}`;
+    const newPathUrl = `${window.location.pathname}?${searchParams.toString()}`;
     router.push(newPathUrl);
   };
   return (
